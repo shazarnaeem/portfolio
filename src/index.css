@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary text-textPrimary;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 px-4 md:px-8 lg:px-16;
+  }
+  
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6;
+  }
+  
+  .subheading {
+    @apply text-xl md:text-2xl text-textSecondary mb-8;
+  }
+} 
