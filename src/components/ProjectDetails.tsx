@@ -57,7 +57,31 @@ const projects: Project[] = [
       "Ensuring Cross-browser Compatibility"
     ],
     outcome: "Developed a comprehensive cryptography platform that makes complex cryptographic operations accessible to users while maintaining security and performance."
+  },
+  {
+    title: "Weather Forecast – Real-Time Weather App",
+    description: "A modern weather application that provides real-time weather updates using the OpenWeather API. Users can search by city or use their current location to get detailed weather data including temperature, humidity, pressure, and a 5-day forecast.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "OpenWeather API"],
+    image: "/images/weather.jpg",
+    github: "https://github.com/shazarnaeem/weatherwebsite",
+    liveDemo: "https://myforcast.netlify.app",
+    features: [
+      "Search by City or Use Geolocation",
+      "Real-Time Weather Data & 5-Day Forecast",
+      "Temperature Toggle (°C / °F)",
+      "Dynamic Icons Based on Weather",
+      "Responsive Design with Smooth Animations",
+      "Error Handling for Location & API Issues"
+    ],
+    challenges: [
+      "Integrating OpenWeather API for both current weather and forecast",
+      "Handling geolocation permissions and fallbacks",
+      "Creating smooth animations and dynamic UI effects"
+    ],
+    outcome: "This app delivers real-time weather updates in a clean, responsive UI with both city-based and location-based functionality. It enhances user engagement through interactive elements and clear weather data visualization."
   }
+  
+
 ]
 
 const ProjectDetails = () => {
