@@ -22,7 +22,6 @@ const ProjectManager = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [editingProject, setEditingProject] = useState<Project | null>(null);
   const [isFeatured, setIsFeatured] = useState(false);
-  const [imageFile, setImageFile] = useState<File | null>(null);
   const navigate = useNavigate();
 
   // Form state
@@ -75,7 +74,6 @@ const ProjectManager = () => {
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
-      setImageFile(file);
       // Create a temporary URL for the image
       const imageUrl = URL.createObjectURL(file);
       setFormData(prev => ({ ...prev, image: imageUrl }));
@@ -113,7 +111,6 @@ const ProjectManager = () => {
     });
     setEditingProject(null);
     setIsFeatured(false);
-    setImageFile(null);
   };
 
   const handleEdit = (project: Project) => {
