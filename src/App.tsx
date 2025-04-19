@@ -7,6 +7,7 @@ import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ProjectDetails from './components/ProjectDetails'
+import ProjectManager from './components/ProjectManager'
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
             </>
           } />
           <Route path="/project/:projectId" element={<ProjectDetails />} />
+          <Route path="/manage-projects" element={<ProjectManager />} />
         </Routes>
       </div>
     </Router>

@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '#home', isHash: true },
+    { name: 'About', href: '#about', isHash: true },
+    { name: 'Projects', href: '#projects', isHash: true },
+    { name: 'Experience', href: '#experience', isHash: true },
+    { name: 'Contact', href: '#contact', isHash: true },
   ]
 
   return (
@@ -22,22 +23,36 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold text-secondary"
           >
-            Portfolio
+            <Link to="/" className="text-secondary hover:text-secondary/80">
+              Portfolio
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <motion.a
+              <motion.div
                 key={item.name}
-                href={item.href}
-                className="text-textSecondary hover:text-secondary transition-colors"
                 whileHover={{ y: -2 }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                {item.name}
-              </motion.a>
+                {item.isHash ? (
+                  <a
+                    href={item.href}
+                    className="text-textSecondary hover:text-secondary transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className="text-textSecondary hover:text-secondary transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </motion.div>
             ))}
           </div>
 
@@ -65,14 +80,25 @@ const Navbar = () => {
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 text-textSecondary hover:text-secondary transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </a>
+                item.isHash ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="block px-3 py-2 text-textSecondary hover:text-secondary transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="block px-3 py-2 text-textSecondary hover:text-secondary transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </div>
           </motion.div>
