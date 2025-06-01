@@ -44,7 +44,6 @@ const moreProjects: Project[] = [
     description: "An AI-powered mobile application that leverages deep learning to detect and classify brain tumors from MRI images. The app supports offline, on-device inference and provides accurate predictions in real time, making it suitable for both educational and healthcare use cases.",
     technologies: ["Flutter", "TensorFlow Lite", "MobileNetV2", "Dart"],
     image: "/images/brain-tumor-logo.jpg",
-    logo: "/images/brain-tumor-logo.jpg",
     github: "https://github.com/shazarnaeem/Brain-tumor-detection-",
     features: [
       "Real-time tumor detection and classification",
