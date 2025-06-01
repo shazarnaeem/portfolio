@@ -136,11 +136,13 @@ const Projects = () => {
             >
               <div className="relative flex flex-col items-center pt-6">
                 {project.logo && (
-                  <img
-                    src={project.logo}
-                    alt={`${project.title} logo`}
-                    className="w-24 h-24 object-contain bg-card/80 rounded-lg p-2 shadow-md mb-2"
-                  />
+                  <div className="absolute top-4 left-4 z-10">
+                    <img
+                      src={project.logo}
+                      alt={`${project.title} logo`}
+                      className="w-12 h-12 object-contain bg-card/80 rounded-lg p-2 shadow-md"
+                    />
+                  </div>
                 )}
                 <img
                   src={project.image}
