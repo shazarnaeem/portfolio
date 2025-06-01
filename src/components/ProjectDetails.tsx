@@ -140,7 +140,7 @@ const ProjectDetails = () => {
             <img
               src={project.logo}
               alt={`${project.title} logo`}
-              className="w-32 h-32 object-contain"
+              className="w-48 h-48 object-contain"
             />
           </div>
         )}

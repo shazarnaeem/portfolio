@@ -134,15 +134,13 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-card rounded-lg overflow-hidden shadow-lg"
             >
-              <div className="relative">
+              <div className="relative flex flex-col items-center pt-6">
                 {project.logo && (
-                  <div className="absolute top-4 left-4 z-10">
-                    <img
-                      src={project.logo}
-                      alt={`${project.title} logo`}
-                      className="w-16 h-16 object-contain bg-card/80 rounded-lg p-2 shadow-md"
-                    />
-                  </div>
+                  <img
+                    src={project.logo}
+                    alt={`${project.title} logo`}
+                    className="w-24 h-24 object-contain bg-card/80 rounded-lg p-2 shadow-md mb-2"
+                  />
                 )}
                 <img
                   src={project.image}
