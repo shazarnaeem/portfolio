@@ -16,29 +16,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Brain Tumor Detection App",
-    description: "An AI-powered mobile application that leverages deep learning to detect and classify brain tumors from MRI images. The app supports offline, on-device inference and provides accurate predictions in real time, making it suitable for both educational and healthcare use cases.",
-    technologies: ["Flutter", "TensorFlow Lite", "MobileNetV2", "Dart"],
-    image: "/images/brain-tumor.jpg",
-    logo: "/images/brain-tumor-logo.jpg",
-    github: "https://github.com/shazarnaeem/Brain-tumor-detection-",
-    features: [
-      "Real-time tumor detection and classification",
-      "Offline capability with on-device inference",
-      "Support for multiple tumor types (Glioma, Meningioma, Pituitary)",
-      "Simple and intuitive user interface",
-      "High accuracy (~87%) using transfer learning",
-      "No internet or server required for predictions"
-    ],
-    challenges: [
-      "Implementing efficient on-device inference with TensorFlow Lite",
-      "Optimizing model size while maintaining accuracy",
-      "Creating a user-friendly interface for medical professionals",
-      "Handling various MRI image formats and qualities"
-    ],
-    outcome: "Developed a powerful medical diagnostic tool that can assist healthcare professionals in detecting brain tumors with high accuracy. The app's offline capabilities make it particularly valuable in resource-constrained settings."
-  },
-  {
     title: "CarAid – On-Demand Car Service Booking App",
     description: "A Flutter-based mobile application that allows customers to book vehicle maintenance services at their preferred date, time, and location. The app ensures a seamless experience by dispatching professional mechanics with the necessary equipment directly to the customer's home.",
     technologies: ["Flutter", "Dart", "Firebase", "Firestore"],
@@ -62,6 +39,29 @@ const projects: Project[] = [
 ]
 
 const moreProjects: Project[] = [
+  {
+    title: "Brain Tumor Detection App",
+    description: "An AI-powered mobile application that leverages deep learning to detect and classify brain tumors from MRI images. The app supports offline, on-device inference and provides accurate predictions in real time, making it suitable for both educational and healthcare use cases.",
+    technologies: ["Flutter", "TensorFlow Lite", "MobileNetV2", "Dart"],
+    image: "/images/brain-tumor.jpg",
+    logo: "/images/brain-tumor-logo.jpg",
+    github: "https://github.com/shazarnaeem/Brain-tumor-detection-",
+    features: [
+      "Real-time tumor detection and classification",
+      "Offline capability with on-device inference",
+      "Support for multiple tumor types (Glioma, Meningioma, Pituitary)",
+      "Simple and intuitive user interface",
+      "High accuracy (~87%) using transfer learning",
+      "No internet or server required for predictions"
+    ],
+    challenges: [
+      "Implementing efficient on-device inference with TensorFlow Lite",
+      "Optimizing model size while maintaining accuracy",
+      "Creating a user-friendly interface for medical professionals",
+      "Handling various MRI image formats and qualities"
+    ],
+    outcome: "Developed a powerful medical diagnostic tool that can assist healthcare professionals in detecting brain tumors with high accuracy. The app's offline capabilities make it particularly valuable in resource-constrained settings."
+  },
   {
     title: "Weather Forecast – Real-Time Weather App",
     description: "A modern weather application that provides real-time weather updates using the OpenWeather API. Users can search by city or use their current location to get detailed weather data including temperature, humidity, pressure, and a 5-day forecast.",
