@@ -6,6 +6,7 @@ interface Project {
   description: string
   technologies: string[]
   image: string
+  logo?: string
   github: string
   liveDemo?: string
   features: string[]
@@ -79,9 +80,30 @@ const projects: Project[] = [
       "Creating smooth animations and dynamic UI effects"
     ],
     outcome: "This app delivers real-time weather updates in a clean, responsive UI with both city-based and location-based functionality. It enhances user engagement through interactive elements and clear weather data visualization."
+  },
+  {
+    title: "Brain Tumor Detection App",
+    description: "An AI-powered mobile application that leverages deep learning to detect and classify brain tumors from MRI images. The app supports offline, on-device inference and provides accurate predictions in real time, making it suitable for both educational and healthcare use cases.",
+    technologies: ["Flutter", "TensorFlow Lite", "MobileNetV2", "Dart"],
+    image: "/images/brain-tumor.jpg",
+    logo: "/images/brain-tumor-logo.png",
+    github: "https://github.com/shazarnaeem/Brain-tumor-detection-",
+    features: [
+      "Real-time tumor detection and classification",
+      "Offline capability with on-device inference",
+      "Support for multiple tumor types (Glioma, Meningioma, Pituitary)",
+      "Simple and intuitive user interface",
+      "High accuracy (~87%) using transfer learning",
+      "No internet or server required for predictions"
+    ],
+    challenges: [
+      "Implementing efficient on-device inference with TensorFlow Lite",
+      "Optimizing model size while maintaining accuracy",
+      "Creating a user-friendly interface for medical professionals",
+      "Handling various MRI image formats and qualities"
+    ],
+    outcome: "Developed a powerful medical diagnostic tool that can assist healthcare professionals in detecting brain tumors with high accuracy. The app's offline capabilities make it particularly valuable in resource-constrained settings."
   }
-  
-
 ]
 
 const ProjectDetails = () => {
@@ -112,6 +134,16 @@ const ProjectDetails = () => {
       
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-secondary mb-6">{project.title}</h1>
+        
+        {project.logo && (
+          <div className="mb-8 flex justify-center">
+            <img
+              src={project.logo}
+              alt={`${project.title} logo`}
+              className="w-32 h-32 object-contain"
+            />
+          </div>
+        )}
         
         <div className="relative mb-8">
           <div className="w-full max-w-3xl mx-auto">

@@ -6,6 +6,7 @@ interface Project {
   description: string
   technologies: string[]
   image: string
+  logo?: string
   github: string
   liveDemo?: string
   features: string[]
@@ -14,6 +15,29 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    title: "Brain Tumor Detection App",
+    description: "An AI-powered mobile application that leverages deep learning to detect and classify brain tumors from MRI images. The app supports offline, on-device inference and provides accurate predictions in real time, making it suitable for both educational and healthcare use cases.",
+    technologies: ["Flutter", "TensorFlow Lite", "MobileNetV2", "Dart"],
+    image: "/images/brain-tumor.jpg",
+    logo: "/images/brain-tumor-logo.png",
+    github: "https://github.com/shazarnaeem/Brain-tumor-detection-",
+    features: [
+      "Real-time tumor detection and classification",
+      "Offline capability with on-device inference",
+      "Support for multiple tumor types (Glioma, Meningioma, Pituitary)",
+      "Simple and intuitive user interface",
+      "High accuracy (~87%) using transfer learning",
+      "No internet or server required for predictions"
+    ],
+    challenges: [
+      "Implementing efficient on-device inference with TensorFlow Lite",
+      "Optimizing model size while maintaining accuracy",
+      "Creating a user-friendly interface for medical professionals",
+      "Handling various MRI image formats and qualities"
+    ],
+    outcome: "Developed a powerful medical diagnostic tool that can assist healthcare professionals in detecting brain tumors with high accuracy. The app's offline capabilities make it particularly valuable in resource-constrained settings."
+  },
   {
     title: "CarAid – On-Demand Car Service Booking App",
     description: "A Flutter-based mobile application that allows customers to book vehicle maintenance services at their preferred date, time, and location. The app ensures a seamless experience by dispatching professional mechanics with the necessary equipment directly to the customer's home.",
@@ -37,7 +61,7 @@ const projects: Project[] = [
   }
 ]
 
-const moreProjects = [
+const moreProjects: Project[] = [
   {
     title: "Weather Forecast – Real-Time Weather App",
     description: "A modern weather application that provides real-time weather updates using the OpenWeather API. Users can search by city or use their current location to get detailed weather data including temperature, humidity, pressure, and a 5-day forecast.",
@@ -110,11 +134,22 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-card rounded-lg overflow-hidden shadow-lg"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-64 object-cover"
-              />
+              <div className="relative">
+                {project.logo && (
+                  <div className="absolute top-4 left-4 z-10">
+                    <img
+                      src={project.logo}
+                      alt={`${project.title} logo`}
+                      className="w-16 h-16 object-contain bg-card/80 rounded-lg p-2 shadow-md"
+                    />
+                  </div>
+                )}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-64 object-cover"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-secondary mb-4">{project.title}</h3>
                 <p className="text-textSecondary mb-6">{project.description}</p>
@@ -170,11 +205,22 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-card rounded-lg overflow-hidden shadow-lg"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative">
+                {project.logo && (
+                  <div className="absolute top-4 left-4 z-10">
+                    <img
+                      src={project.logo}
+                      alt={`${project.title} logo`}
+                      className="w-12 h-12 object-contain bg-card/80 rounded-lg p-2 shadow-md"
+                    />
+                  </div>
+                )}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-secondary mb-3">{project.title}</h3>
                 <p className="text-textSecondary mb-4 text-sm">{project.description}</p>
